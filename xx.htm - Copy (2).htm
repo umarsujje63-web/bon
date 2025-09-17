@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACULTY OF SCIENCE AND TECHNOLOGY - COURSES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #003366;
+            /* University blue */
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+        nav {
+            background-color: #1a237e;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .logo {
+            display: flex;
+            margin-left: 10px;
+
+
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 240px;
+
+        }
+
+        .nav-links li {
+            margin: center 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: bold;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #ffc107;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-items {
+            list-style: none;
+        }
+
+        .menu-items li {
+            padding: 15px 30px;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-items li:hover {
+            background-color: #002244;
+            border-left: 4px solid #ffcc00;
+            cursor: pointer;
+        }
+
+        .menu-items li.active {
+            background-color: #002244;
+            border-left: 4px solid #ffcc00;
+        }
+
+        .menu-items i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h2 {
+            font-size: 28px;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+        }
+
+        /* Table Styling */
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-table th {
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .course-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .course-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .course-table tr:hover {
+            background-color: #f0f7ff;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status.completed {
+            background-color: #e6f7ee;
+            color: #00a65a;
+        }
+
+        .status.in-progress {
+            background-color: #fff4e6;
+            color: #f39c12;
+        }
+
+        .status.not-started {
+            background-color: #e6f0ff;
+            color: #0066cc;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-left: 250px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffcc00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+                padding: 10px 0;
+            }
+
+
+
+            .menu-items li {
+                text-align: center;
+                padding: 15px 0;
+            }
+
+            .menu-items i {
+                margin-right: 0;
+                font-size: 20px;
+            }
+
+            .main-content,
+            footer {
+                margin-left: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <ul class="nav-links">
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#">About</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="C:\Users\Davis\Downloads\mrulogo.png" ,width="100" height="140">
+            </div>
+            <ul class="menu-items">
+                <li class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></li>
+                <li><i class="fas fa-book"></i> <span>Courses</span></li>
+                <li><i class="fas fa-cog"></i> <span>Settings</span></li>
+                <li><i class="fas fa-user"></i> <span>Profile</span></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h2>MUTEESA I ROYAL UNIVERSITY-COURSES</h2>
+            </div>
+
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>COURSE NAME </th>
+                        <th>COURSE CODE</th>
+                        <th>DURATION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BACHELOR IN INFORMATION TECHNOLOGY</td>
+                        <td>BIT</td>
+                        <td>THREE YEARS</td>
+
+
+                    </tr>
+                    <tr>
+                        <td>BACHELOR OF BUSINESS ADMINISTRATION</td>
+                        <td>BBA</td>
+                        <td>THREE YEARS</td>
+
+
+                    </tr>
+                    <tr>
+                        <td>BACHELOR OF ARTS WITH EDUCATION</td>
+                        <td>BEAD</td>
+                        <td>THREE YEARS</td>
+
+
+                    </tr>
+                    <tr>
+                        <td>BACHELOR OF HUMAN RESOURCE MANAGEMENT</td>
+                        <td>BHRM</td>
+                        <td>THREE YEARS</td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; <span id="current-year">2025</span>MRU. All rights reserved.
+            </div>
+            <div class="social-links">
+                <a href="https://wa.link/4m 1wsf"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Add interactivity to menu items
+        document.querySelectorAll('.menu-items li').forEach(item => {
+            item.addEventListener('click', function () {
+                document.querySelector('.menu-items li.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>"
